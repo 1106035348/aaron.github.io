@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>测试 </title>
+		<title>Aaron的小破站 </title>
 		<link>https://www.cleanbug.cn/</link>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<author></author>
 		<rights>Copyright (c) 2022</rights>
-		<updated>2022-08-25 23:53:28 &#43;0800 CST</updated>
+		<updated>2022-08-26 19:48:22 &#43;0800 CST</updated>
 		
 		<item>
 			<title>Posts</title>
 			<link>https://www.cleanbug.cn/posts/</link>
-			<pubDate>Thu, 25 Aug 2022 23:53:28 CST</pubDate>
+			<pubDate>Fri, 26 Aug 2022 19:48:22 CST</pubDate>
 			<author></author>
 			<guid>https://www.cleanbug.cn/posts/</guid>
 			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cleanbug.cn/img/default-header-img.tn-500x500.jpg" medium="image" type="image/jpg" width="100" height="100" />
