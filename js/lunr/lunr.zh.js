@@ -99,10 +99,12 @@
             }
 
             var str = obj.toString().trim().toLowerCase();
-            var tokens = [];
-            segmenter.doSegment(str).forEach(function (s) {
-                tokens.concat(s);
-            })
+            var tokens = segmenter.doSegment(str,
+                {
+                    simple: true,
+                    stripPunctuation: true
+                });
+
 
 
             tokens = tokens.filter(function (token) {
