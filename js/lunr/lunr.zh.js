@@ -64,7 +64,9 @@
 
         /* register specific locale function */
         lunr.zh = function () {
-
+            if (!segmenter) {
+                segmenter = new Segmentit.useDefault(new Segmentit.Segment());
+            }
             this.pipeline.reset();
             this.pipeline.add(
                 lunr.zh.trimmer,
@@ -85,13 +87,16 @@
             }
         };
 
+        var segmenter;
+
         lunr.zh.tokenizer = function (obj) {
             if (!arguments.length || obj == null || obj == undefined) return []
             if (Array.isArray(obj)) return obj.map(function (t) {
                 return isLunr2 ? new lunr.Token(t.toLowerCase()) : t.toLowerCase()
             })
-
-            var segmenter = new Segmentit.useDefault(new Segmentit.Segment());
+            if (!segmenter) {
+                segmenter = new Segmentit.useDefault(new Segmentit.Segment());
+            }
 
             var str = obj.toString().trim().toLowerCase();
             var tokens = [];
