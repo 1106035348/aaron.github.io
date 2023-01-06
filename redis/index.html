@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>1</title>
+		<title>Redis &bullet; Aaron的小破站</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.cleanbug.cn/index.xml">
-		<link rel="canonical" href="https://www.cleanbug.cn/2022/08/25/1/">
+		<link rel="canonical" href="https://www.cleanbug.cn/redis/">
 		
 		<link rel="shortcut icon" type="image/png" href="https://www.cleanbug.cn/apple-touch-icon-precomposed.png">
 		
@@ -13,15 +13,7 @@
 
 
 		
-		<meta property="og:title" content="1" />
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="https://www.cleanbug.cn/img/default-header-img.jpg" />
-		<meta property="og:description" content="" />
-		<meta property="og:url" content="https://www.cleanbug.cn/2022/08/25/1/" />
-		<meta property="og:site_name" content="1" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@" />
-
+		
 
 		
 		<link rel="stylesheet" href="https://www.cleanbug.cn/css/tachyons.min.css" />
@@ -37,7 +29,7 @@
 		<script src="https://www.cleanbug.cn/js/story.js"></script>
 
 	</head>
-	<body class="ma0 bg-white section-posts page-kind-page is-page-true ">
+	<body class="ma0 bg-white section-redis page-kind-section is-page-false ">
 		
 		<header class="cover bg-top" style="background-image: url('https://www.cleanbug.cn/img/default-header-img.jpg'); background-position: center;">
 			<div class="bg-black-30 bb bt">
@@ -47,26 +39,18 @@
 						<img src="https://www.cleanbug.cn/img/logo.jpg" class="w2 h2 br-100" alt="Aaron的小破站" />
 					</a>
 					<div class="fr h2 pv2 tr">
-						<a class="link f5 ml2 dim near-white" href="/archives/">Archives</a>
-						<a class="link f5 ml2 dim near-white" href="/slides/">Slides</a>
-						<a class="link f5 ml2 dim near-white" href="/talks/">Talks</a>
-						<a class="link f5 ml2 dim near-white" href="https://github.com/1106035348/"><i class="fab fa-github-square"></i></a>
+						<a class="link f5 ml2 dim near-white" href="/redis/">redis</a>
+						<a class="link f5 ml2 dim near-white" href="https://github.com/YL-Aaron"><i class="fab fa-github-square"></i></a>
 						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="https://www.cleanbug.cn/index.xml" title="RSS Feed"></a>
 						<a class="link f5 ml2 dim near-white fas fa-search" href="https://www.cleanbug.cn/search/" role="search" title="Search"></a>
 					</div>
 				</nav>
 
 				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
-					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">1</h1>
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Redis</h1>
 					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						
 						
-							
-								Published
-								<time datetime="2022-08-25T23:53:28&#43;08:00">Aug 25, 2022</time>
-								<span class="display-print">by </span>
-								 in <a href="https://www.cleanbug.cn/categories/" class="no-underline category near-white dim"></a>
-								<span class="display-print">at https://www.cleanbug.cn/2022/08/25/1/</span>
 							
 						
 					</h2>
@@ -82,9 +66,42 @@
 		
 		<main role="main">
 		
-<article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
-	
-</article>
+<div class="pa3 pa4-ns w-100 w-70-ns center">
+  <section class="w-100 mw8">
+  
+  
+  
+    
+      <div class="relative w-100">
+	<article>
+		<div class="db pv4 ph3 ph0-l no-underline dark-gray">
+			<div class="flex flex-column flex-row-ns">
+				
+				<div class="mb4 mb0-ns w-100 h4 h4-m w4-m h5-ns w5-ns br3 cover hide-child" style="background-image: url('https://www.cleanbug.cn/img/default-header-img.tn-500x500.jpg'); background-position: center;">
+					<a href="https://www.cleanbug.cn/redis/stream/" class="sans-serif db child w-100 h-100 f7 lh-copy white no-underline br3 ph3 pt4 pt5-l ttu tc bg-black-60">
+						<i class="mt3 mt5-l child far fa-calendar-alt"></i> Jan 6, 2023
+					</a>
+				</div>
+				
+				<div class="w-100 w6-ns pl3-ns">
+					<h1 class="f3 fw1 mt0 lh-title"><a href="https://www.cleanbug.cn/redis/stream/" class="color-inherit dim link">使用redis Stream来做一个简单的队列</a></h1>
+					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+						
+							<p>Redis 5 新特性引入了新的数据结构Streams 。它使 5.x 版本迭代中，Redis 作为消息队列使用时，得到更完善，更强大的原生支持，其中尤为明显的是持久化消息队列。</p>
+<p>同时，stream 借鉴了 kafka 的消费组模型概念和设计，使消费消息处理上更加高效快速。本文就 Streams 数据结构中常用 API 进行分析。</p>
+							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="https://www.cleanbug.cn/redis/stream/">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</div>
+
+    
+  
+  </section>
+</div>
 
 		</main>
 		
@@ -92,13 +109,10 @@
 		<div class="about-the-author">
 		
 			
-			
-				
-					<hr>
-<p><a href="https://github.com/1106035348/"><img src="/images/IMG_20211107_173022.jpg" alt="Aaron"></a></p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --> <em>Robin Moffatt is a Principal Developer Advocate at Confluent, and an Oracle ACE Director (Alumnus). He likes writing about himself in the third person, eating good breakfasts, and drinking good beer.</em></p>
+				<hr>
+<p><a href="https://github.com/YL-Aaron"><img src="/images/IMG_20211107_173022.jpg" alt="Aaron"></a></p>
+<p>java开发，目前在一家区块链公司工作，这里分享一些日常使用到的技术</p>
 
-				
 			
 		
 		</div>
@@ -107,6 +121,10 @@
 
 		
 		
+<footer class="w-100 sans-serif" role="contentinfo">
+	<nav class="w-third-l pb3 f6 center db" role="navigation"></nav>
+</footer>
+
 		
 		<footer class="hide-print sans-serif f6 fw1 bg-black near-white bottom-0 w-100 pa3" role="contentinfo">
 			<p class="w-50 fr tr">
