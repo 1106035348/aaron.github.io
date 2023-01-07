@@ -81,8 +81,19 @@
 		<main role="main">
 		
 <article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
-	<p>Redis 5 新特性引入了新的数据结构Streams 。它使 5.x 版本迭代中，Redis 作为消息队列使用时，得到更完善，更强大的原生支持，其中尤为明显的是持久化消息队列。</p>
-<p>同时，stream 借鉴了 kafka 的消费组模型概念和设计，使消费消息处理上更加高效快速。本文就 Streams 数据结构中常用 API 进行分析。</p>
+	<h1 id="简介">简介</h1>
+<p>Redis Stream 是 Redis 5.0 版本新增加的数据结构。</p>
+<p>Redis Stream 主要用于消息队列（MQ，Message Queue），Redis 本身是有一个 Redis 发布订阅 (pub/sub) 来实现消息队列的功能，但它有个缺点就是消息无法持久化。如果出现网络断开、Redis 宕机等，消息就会被丢弃。简单来说发布订阅 (pub/sub) 可以分发消息，但无法记录历史消息。</p>
+<p>Redis Stream 提供了消息持久化和主备复制功能，可以让任何客户端访问任何时刻的数据，并且能记住每一个客户端的访问位置，还能保证消息不丢失。每个 Redis Stream 都有唯一的名称，它就是 Redis 的 key，在我们首次使用 xadd 指令追加消息时自动创建。</p>
+<p>Redis Stream 的结构如下图：
+<img src="/images/redis_01.png" alt="">
+上图中，维护了一个消息链表，将所有加入的消息都串起来，每个消息都有一个唯一的 ID 和对应的内容。其中：</p>
+<p><strong>消息正文（Message Content）</strong> 负载了每条消息的真实数据。</p>
+<p><strong>消费组（Consumer Group）</strong> 使用 XGROUP CREATE 命令创建，一个消费组有多个消费者（Consumer）。</p>
+<p><strong>游标（last_delivered_id）</strong> 每个消费组会有个游标 last_delivered_id，任意一个消费者读取了消息都会使游标 last_delivered_id 往前移动。</p>
+<p><strong>消费者（Consumer）</strong> 消息的最终消费者，从队列<strong>主动</strong>拉取消息进行消费。</p>
+<p><strong>消费者状态变量（pending_ids）</strong> 作用是维护消费者的未确认的 id。pending_ids 记录了当前已经被客户端读取的消息，但是还没有确认，即未 ack (Acknowledge character）。</p>
+
 </article>
 
 		</main>

@@ -13,8 +13,8 @@
       <pubDate>Fri, 06 Jan 2023 20:51:27 +0800</pubDate>
       
       <guid>https://www.cleanbug.cn/redis/stream/</guid>
-      <description>&lt;p&gt;Redis 5 新特性引入了新的数据结构Streams 。它使 5.x 版本迭代中，Redis 作为消息队列使用时，得到更完善，更强大的原生支持，其中尤为明显的是持久化消息队列。&lt;/p&gt;
-&lt;p&gt;同时，stream 借鉴了 kafka 的消费组模型概念和设计，使消费消息处理上更加高效快速。本文就 Streams 数据结构中常用 API 进行分析。&lt;/p&gt;</description>
+      <description>简介 Redis Stream 是 Redis 5.0 版本新增加的数据结构。
+Redis Stream 主要用于消息队列（MQ，Message Queue），Redis 本身是有一个 Redis 发布订阅 (pub/sub) 来实现消息队列的功能，但它有个缺点就是消息无法持久化。如果出现网络断开、Redis 宕机等，消息就会被丢弃。简单来说发布订阅 (pub/sub) 可以分发消息，但无法记录历史消息。</description>
     </item>
     
   </channel>
